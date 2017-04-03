@@ -1,0 +1,373 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/Matt-Esch/virtual-dom"
+
+    >virtual-dom (v2.1.1)</a>
+</h1>
+<h4>A batched diff-based DOM rendering strategy</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom">module virtual-dom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.VNode">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>VNode
+            <span class="apidocSignatureSpan">(tagName, properties, children, key, namespace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.VText">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>VText
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.create">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>create
+            <span class="apidocSignatureSpan">(vnode, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.diff">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>diff
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.h">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>h
+            <span class="apidocSignatureSpan">(tagName, properties, children)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.patch">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>patch
+            <span class="apidocSignatureSpan">(rootNode, patches, renderOptions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.virtual-dom" id="apidoc.module.virtual-dom">module virtual-dom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.VNode" id="apidoc.element.virtual-dom.VNode">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>VNode
+        <span class="apidocSignatureSpan">(tagName, properties, children, key, namespace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VirtualNode(tagName, properties, children, key, namespace) {
+    this.tagName = tagName
+    this.properties = properties || noProperties
+    this.children = children || noChildren
+    this.key = key != null ? String(key) : undefined
+    this.namespace = (typeof namespace === &#x22;string&#x22;) ? namespace : null
+
+    var count = (children &#x26;&#x26; children.length) || 0
+    var descendants = 0
+    var hasWidgets = false
+    var hasThunks = false
+    var descendantHooks = false
+    var hooks
+
+    for (var propName in properties) {
+        if (properties.hasOwnProperty(propName)) {
+            var property = properties[propName]
+            if (isVHook(property) &#x26;&#x26; property.unhook) {
+                if (!hooks) {
+                    hooks = {}
+                }
+
+                hooks[propName] = property
+            }
+        }
+    }
+
+    for (var i = 0; i &#x3c; count; i++) {
+        var child = children[i]
+        if (isVNode(child)) {
+            descendants += child.count || 0
+
+            if (!hasWidgets &#x26;&#x26; child.hasWidgets) {
+                hasWidgets = true
+            }
+
+            if (!hasThunks &#x26;&#x26; child.hasThunks) {
+                hasThunks = true
+            }
+
+            if (!descendantHooks &#x26;&#x26; (child.hooks || child.descendantHooks)) {
+                descendantHooks = true
+            }
+        } else if (!hasWidgets &#x26;&#x26; isWidget(child)) {
+            if (typeof child.destroy === &#x22;function&#x22;) {
+                hasWidgets = true
+            }
+        } else if (!hasThunks &#x26;&#x26; isThunk(child)) {
+            hasThunks = true;
+        }
+    }
+
+    this.count = count + descendants
+    this.hasWidgets = hasWidgets
+    this.hasThunks = hasThunks
+    this.hooks = hooks
+    this.descendantHooks = descendantHooks
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.VText" id="apidoc.element.virtual-dom.VText">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>VText
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function VirtualText(text) {
+    this.text = String(text)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.create" id="apidoc.element.virtual-dom.create">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>create
+        <span class="apidocSignatureSpan">(vnode, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createElement(vnode, opts) {
+    var doc = opts ? opts.document || document : document
+    var warn = opts ? opts.warn : null
+
+    vnode = handleThunk(vnode).a
+
+    if (isWidget(vnode)) {
+        return vnode.init()
+    } else if (isVText(vnode)) {
+        return doc.createTextNode(vnode.text)
+    } else if (!isVNode(vnode)) {
+        if (warn) {
+            warn(&#x22;Item is not a valid virtual dom node&#x22;, vnode)
+        }
+        return null
+    }
+
+    var node = (vnode.namespace === null) ?
+        doc.createElement(vnode.tagName) :
+        doc.createElementNS(vnode.namespace, vnode.tagName)
+
+    var props = vnode.properties
+    applyProperties(node, props)
+
+    var children = vnode.children
+
+    for (var i = 0; i &#x3c; children.length; i++) {
+        var childNode = createElement(children[i], opts)
+        if (childNode) {
+            node.appendChild(childNode)
+        }
+    }
+
+    return node
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.diff" id="apidoc.element.virtual-dom.diff">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>diff
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function diff(a, b) {
+    var patch = { a: a }
+    walk(a, b, patch, 0)
+    return patch
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.h" id="apidoc.element.virtual-dom.h">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>h
+        <span class="apidocSignatureSpan">(tagName, properties, children)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function h(tagName, properties, children) {
+    var childNodes = [];
+    var tag, props, key, namespace;
+
+    if (!children &#x26;&#x26; isChildren(properties)) {
+        children = properties;
+        props = {};
+    }
+
+    props = props || properties || {};
+    tag = parseTag(tagName, props);
+
+    // support keys
+    if (props.hasOwnProperty(&#x27;key&#x27;)) {
+        key = props.key;
+        props.key = undefined;
+    }
+
+    // support namespace
+    if (props.hasOwnProperty(&#x27;namespace&#x27;)) {
+        namespace = props.namespace;
+        props.namespace = undefined;
+    }
+
+    // fix cursor bug
+    if (tag === &#x27;INPUT&#x27; &#x26;&#x26;
+        !namespace &#x26;&#x26;
+        props.hasOwnProperty(&#x27;value&#x27;) &#x26;&#x26;
+        props.value !== undefined &#x26;&#x26;
+        !isHook(props.value)
+    ) {
+        props.value = softSetHook(props.value);
+    }
+
+    transformProperties(props);
+
+    if (children !== undefined &#x26;&#x26; children !== null) {
+        addChild(children, childNodes, tag, props);
+    }
+
+
+    return new VNode(tag, props, childNodes, key, namespace);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.patch" id="apidoc.element.virtual-dom.patch">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>patch
+        <span class="apidocSignatureSpan">(rootNode, patches, renderOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function patch(rootNode, patches, renderOptions) {
+    renderOptions = renderOptions || {}
+    renderOptions.patch = renderOptions.patch &#x26;&#x26; renderOptions.patch !== patch
+        ? renderOptions.patch
+        : patchRecursive
+    renderOptions.render = renderOptions.render || render
+
+    return renderOptions.patch(rootNode, patches, renderOptions)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        reorderChildren(domNode, patch)
+        return domNode
+    case VPatch.PROPS:
+        applyProperties(domNode, patch, vNode.properties)
+        return domNode
+    case VPatch.THUNK:
+        return replaceRoot(domNode,
+            renderOptions.<span class="apidocCodeKeywordSpan">patch</span>(domNode, patch, renderOptions))
+    default:
+        return domNode
+}
+}
+
+function removeNode(domNode, vNode) {
+var parentNode = domNode.parentNode
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>

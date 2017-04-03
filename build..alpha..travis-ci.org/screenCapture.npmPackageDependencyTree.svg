@@ -1,0 +1,21 @@
+<svg height="286" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="286" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">└─┬ virtual-dom@2.1.1 </tspan>
+<tspan x="10" y="42">  ├── browser-split@0.0.1 </tspan>
+<tspan x="10" y="58">  ├─┬ error@4.4.0 </tspan>
+<tspan x="10" y="74">  │ ├── camelize@1.0.0 </tspan>
+<tspan x="10" y="90">  │ ├── string-template@0.2.1 </tspan>
+<tspan x="10" y="106">  │ └── xtend@4.0.1 </tspan>
+<tspan x="10" y="122">  ├─┬ ev-store@7.0.0 </tspan>
+<tspan x="10" y="138">  │ └── individual@3.0.0 </tspan>
+<tspan x="10" y="154">  ├─┬ global@4.3.1 </tspan>
+<tspan x="10" y="170">  │ ├─┬ min-document@2.19.0 </tspan>
+<tspan x="10" y="186">  │ │ └── dom-walk@0.1.1 </tspan>
+<tspan x="10" y="202">  │ └── process@0.5.2 </tspan>
+<tspan x="10" y="218">  ├── is-object@1.0.1 </tspan>
+<tspan x="10" y="234">  ├── next-tick@0.2.2 </tspan>
+<tspan x="10" y="250">  ├── x-is-array@0.1.0 </tspan>
+<tspan x="10" y="266">  └── x-is-string@0.1.0</tspan>
+</text>
+</svg>
