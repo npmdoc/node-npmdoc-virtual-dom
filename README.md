@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/virtual-dom.png?downloads=true)](https://www.npmjs.com/package/virtual-dom)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-virtual-dom_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-virtual-dom/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-virtual-dom_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/screenCapture.npmPackageListing.svg)
 
