@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/Matt-Esch/virtual-dom"
-
-    >virtual-dom (v2.1.1)</a>
+    <a href="https://github.com/Matt-Esch/virtual-dom">virtual-dom (v2.1.1)</a>
 </h1>
 <h4>A batched diff-based DOM rendering strategy</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom">module virtual-dom</a><ol>
 
@@ -575,9 +568,9 @@
     this.properties = properties || noProperties
     this.children = children || noChildren
     this.key = key != null ? String(key) : undefined
-    this.namespace = (typeof namespace === &#x22;string&#x22;) ? namespace : null
+    this.namespace = (typeof namespace === "string") ? namespace : null
 
-    var count = (children &#x26;&#x26; children.length) || 0
+    var count = (children &amp;&amp; children.length) || 0
     var descendants = 0
     var hasWidgets = false
     var hasThunks = false
@@ -587,7 +580,7 @@
     for (var propName in properties) {
         if (properties.hasOwnProperty(propName)) {
             var property = properties[propName]
-            if (isVHook(property) &#x26;&#x26; property.unhook) {
+            if (isVHook(property) &amp;&amp; property.unhook) {
                 if (!hooks) {
                     hooks = {}
                 }
@@ -597,27 +590,27 @@
         }
     }
 
-    for (var i = 0; i &#x3c; count; i++) {
+    for (var i = 0; i &lt; count; i++) {
         var child = children[i]
         if (isVNode(child)) {
             descendants += child.count || 0
 
-            if (!hasWidgets &#x26;&#x26; child.hasWidgets) {
+            if (!hasWidgets &amp;&amp; child.hasWidgets) {
                 hasWidgets = true
             }
 
-            if (!hasThunks &#x26;&#x26; child.hasThunks) {
+            if (!hasThunks &amp;&amp; child.hasThunks) {
                 hasThunks = true
             }
 
-            if (!descendantHooks &#x26;&#x26; (child.hooks || child.descendantHooks)) {
+            if (!descendantHooks &amp;&amp; (child.hooks || child.descendantHooks)) {
                 descendantHooks = true
             }
-        } else if (!hasWidgets &#x26;&#x26; isWidget(child)) {
-            if (typeof child.destroy === &#x22;function&#x22;) {
+        } else if (!hasWidgets &amp;&amp; isWidget(child)) {
+            if (typeof child.destroy === "function") {
                 hasWidgets = true
             }
-        } else if (!hasThunks &#x26;&#x26; isThunk(child)) {
+        } else if (!hasThunks &amp;&amp; isThunk(child)) {
             hasThunks = true;
         }
     }
@@ -701,7 +694,7 @@
         return doc.createTextNode(vnode.text)
     } else if (!isVNode(vnode)) {
         if (warn) {
-            warn(&#x22;Item is not a valid virtual dom node&#x22;, vnode)
+            warn("Item is not a valid virtual dom node", vnode)
         }
         return null
     }
@@ -715,7 +708,7 @@
 
     var children = vnode.children
 
-    for (var i = 0; i &#x3c; children.length; i++) {
+    for (var i = 0; i &lt; children.length; i++) {
         var childNode = createElement(children[i], opts)
         if (childNode) {
             node.appendChild(childNode)
@@ -767,7 +760,7 @@
 
         if (aValue === bValue) {
             continue
-        } else if (isObject(aValue) &#x26;&#x26; isObject(bValue)) {
+        } else if (isObject(aValue) &amp;&amp; isObject(bValue)) {
             if (getPrototype(bValue) !== getPrototype(aValue)) {
                 diff = diff || {}
                 diff[aKey] = bValue
@@ -812,7 +805,7 @@
     var childNodes = [];
     var tag, props, key, namespace;
 
-    if (!children &#x26;&#x26; isChildren(properties)) {
+    if (!children &amp;&amp; isChildren(properties)) {
         children = properties;
         props = {};
     }
@@ -821,22 +814,22 @@
     tag = parseTag(tagName, props);
 
     // support keys
-    if (props.hasOwnProperty(&#x27;key&#x27;)) {
+    if (props.hasOwnProperty('key')) {
         key = props.key;
         props.key = undefined;
     }
 
     // support namespace
-    if (props.hasOwnProperty(&#x27;namespace&#x27;)) {
+    if (props.hasOwnProperty('namespace')) {
         namespace = props.namespace;
         props.namespace = undefined;
     }
 
     // fix cursor bug
-    if (tag === &#x27;INPUT&#x27; &#x26;&#x26;
-        !namespace &#x26;&#x26;
-        props.hasOwnProperty(&#x27;value&#x27;) &#x26;&#x26;
-        props.value !== undefined &#x26;&#x26;
+    if (tag === 'INPUT' &amp;&amp;
+        !namespace &amp;&amp;
+        props.hasOwnProperty('value') &amp;&amp;
+        props.value !== undefined &amp;&amp;
         !isHook(props.value)
     ) {
         props.value = softSetHook(props.value);
@@ -844,7 +837,7 @@
 
     transformProperties(props);
 
-    if (children !== undefined &#x26;&#x26; children !== null) {
+    if (children !== undefined &amp;&amp; children !== null) {
         addChild(children, childNodes, tag, props);
     }
 
@@ -893,7 +886,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isThunk(t) {
-    return t &#x26;&#x26; t.type === &#x22;Thunk&#x22;
+    return t &amp;&amp; t.type === "Thunk"
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -908,9 +901,9 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isHook(hook) {
-    return hook &#x26;&#x26;
-      (typeof hook.hook === &#x22;function&#x22; &#x26;&#x26; !hook.hasOwnProperty(&#x22;hook&#x22;) ||
-       typeof hook.unhook === &#x22;function&#x22; &#x26;&#x26; !hook.hasOwnProperty(&#x22;unhook&#x22;))
+    return hook &amp;&amp;
+      (typeof hook.hook === "function" &amp;&amp; !hook.hasOwnProperty("hook") ||
+       typeof hook.unhook === "function" &amp;&amp; !hook.hasOwnProperty("unhook"))
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -925,7 +918,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isVirtualNode(x) {
-    return x &#x26;&#x26; x.type === &#x22;VirtualNode&#x22; &#x26;&#x26; x.version === version
+    return x &amp;&amp; x.type === "VirtualNode" &amp;&amp; x.version === version
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -940,7 +933,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isVirtualText(x) {
-    return x &#x26;&#x26; x.type === &#x22;VirtualText&#x22; &#x26;&#x26; x.version === version
+    return x &amp;&amp; x.type === "VirtualText" &amp;&amp; x.version === version
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -955,7 +948,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isWidget(w) {
-    return w &#x26;&#x26; w.type === &#x22;Widget&#x22;
+    return w &amp;&amp; w.type === "Widget"
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -971,21 +964,21 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseTag(tag, props) {
     if (!tag) {
-        return &#x27;DIV&#x27;;
+        return 'DIV';
     }
 
-    var noId = !(props.hasOwnProperty(&#x27;id&#x27;));
+    var noId = !(props.hasOwnProperty('id'));
 
     var tagParts = split(tag, classIdSplit);
     var tagName = null;
 
     if (notClassId.test(tagParts[1])) {
-        tagName = &#x27;DIV&#x27;;
+        tagName = 'DIV';
     }
 
     var classes, part, type, i;
 
-    for (i = 0; i &#x3c; tagParts.length; i++) {
+    for (i = 0; i &lt; tagParts.length; i++) {
         part = tagParts[i];
 
         if (!part) {
@@ -996,10 +989,10 @@
 
         if (!tagName) {
             tagName = part;
-        } else if (type === &#x27;.&#x27;) {
+        } else if (type === '.') {
             classes = classes || [];
             classes.push(part.substring(1, part.length));
-        } else if (type === &#x27;#&#x27; &#x26;&#x26; noId) {
+        } else if (type === '#' &amp;&amp; noId) {
             props.id = part.substring(1, part.length);
         }
     }
@@ -1009,7 +1002,7 @@
             classes.push(props.className);
         }
 
-        props.className = classes.join(&#x27; &#x27;);
+        props.className = classes.join(' ');
     }
 
     return props.namespace ? tagName : tagName.toUpperCase();
@@ -1028,7 +1021,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function patch(rootNode, patches, renderOptions) {
     renderOptions = renderOptions || {}
-    renderOptions.patch = renderOptions.patch &#x26;&#x26; renderOptions.patch !== patch
+    renderOptions.patch = renderOptions.patch &amp;&amp; renderOptions.patch !== patch
         ? renderOptions.patch
         : patchRecursive
     renderOptions.render = renderOptions.render || render
@@ -1105,7 +1098,7 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function svg(tagName, properties, children) {
-    if (!children &#x26;&#x26; isChildren(properties)) {
+    if (!children &amp;&amp; isChildren(properties)) {
         children = properties;
         properties = {};
     }
@@ -1130,9 +1123,9 @@ var parentNode = domNode.parentNode
 
         var value = properties[key];
 
-        if (typeof value !== &#x27;string&#x27; &#x26;&#x26;
-            typeof value !== &#x27;number&#x27; &#x26;&#x26;
-            typeof value !== &#x27;boolean&#x27;
+        if (typeof value !== 'string' &amp;&amp;
+            typeof value !== 'number' &amp;&amp;
+            typeof value !== 'boolean'
         ) {
             continue;
         }
@@ -1178,8 +1171,8 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function updateWidget(a, b) {
-    if (isWidget(a) &#x26;&#x26; isWidget(b)) {
-        if (&#x22;name&#x22; in a &#x26;&#x26; &#x22;name&#x22; in b) {
+    if (isWidget(a) &amp;&amp; isWidget(b)) {
+        if ("name" in a &amp;&amp; "name" in b) {
             return a.id === b.id
         } else {
             return a.init === b.init
@@ -1227,9 +1220,9 @@ var parentNode = domNode.parentNode
     this.properties = properties || noProperties
     this.children = children || noChildren
     this.key = key != null ? String(key) : undefined
-    this.namespace = (typeof namespace === &#x22;string&#x22;) ? namespace : null
+    this.namespace = (typeof namespace === "string") ? namespace : null
 
-    var count = (children &#x26;&#x26; children.length) || 0
+    var count = (children &amp;&amp; children.length) || 0
     var descendants = 0
     var hasWidgets = false
     var hasThunks = false
@@ -1239,7 +1232,7 @@ var parentNode = domNode.parentNode
     for (var propName in properties) {
         if (properties.hasOwnProperty(propName)) {
             var property = properties[propName]
-            if (isVHook(property) &#x26;&#x26; property.unhook) {
+            if (isVHook(property) &amp;&amp; property.unhook) {
                 if (!hooks) {
                     hooks = {}
                 }
@@ -1249,27 +1242,27 @@ var parentNode = domNode.parentNode
         }
     }
 
-    for (var i = 0; i &#x3c; count; i++) {
+    for (var i = 0; i &lt; count; i++) {
         var child = children[i]
         if (isVNode(child)) {
             descendants += child.count || 0
 
-            if (!hasWidgets &#x26;&#x26; child.hasWidgets) {
+            if (!hasWidgets &amp;&amp; child.hasWidgets) {
                 hasWidgets = true
             }
 
-            if (!hasThunks &#x26;&#x26; child.hasThunks) {
+            if (!hasThunks &amp;&amp; child.hasThunks) {
                 hasThunks = true
             }
 
-            if (!descendantHooks &#x26;&#x26; (child.hooks || child.descendantHooks)) {
+            if (!descendantHooks &amp;&amp; (child.hooks || child.descendantHooks)) {
                 descendantHooks = true
             }
-        } else if (!hasWidgets &#x26;&#x26; isWidget(child)) {
-            if (typeof child.destroy === &#x22;function&#x22;) {
+        } else if (!hasWidgets &amp;&amp; isWidget(child)) {
+            if (typeof child.destroy === "function") {
                 hasWidgets = true
             }
-        } else if (!hasThunks &#x26;&#x26; isThunk(child)) {
+        } else if (!hasThunks &amp;&amp; isThunk(child)) {
             hasThunks = true;
         }
     }
@@ -1368,7 +1361,7 @@ var parentNode = domNode.parentNode
         return doc.createTextNode(vnode.text)
     } else if (!isVNode(vnode)) {
         if (warn) {
-            warn(&#x22;Item is not a valid virtual dom node&#x22;, vnode)
+            warn("Item is not a valid virtual dom node", vnode)
         }
         return null
     }
@@ -1382,7 +1375,7 @@ var parentNode = domNode.parentNode
 
     var children = vnode.children
 
-    for (var i = 0; i &#x3c; children.length; i++) {
+    for (var i = 0; i &lt; children.length; i++) {
         var childNode = createElement(children[i], opts)
         if (childNode) {
             node.appendChild(childNode)
@@ -1444,7 +1437,7 @@ var parentNode = domNode.parentNode
 
         if (aValue === bValue) {
             continue
-        } else if (isObject(aValue) &#x26;&#x26; isObject(bValue)) {
+        } else if (isObject(aValue) &amp;&amp; isObject(bValue)) {
             if (getPrototype(bValue) !== getPrototype(aValue)) {
                 diff = diff || {}
                 diff[aKey] = bValue
@@ -1494,7 +1487,7 @@ var parentNode = domNode.parentNode
     var childNodes = [];
     var tag, props, key, namespace;
 
-    if (!children &#x26;&#x26; isChildren(properties)) {
+    if (!children &amp;&amp; isChildren(properties)) {
         children = properties;
         props = {};
     }
@@ -1503,22 +1496,22 @@ var parentNode = domNode.parentNode
     tag = parseTag(tagName, props);
 
     // support keys
-    if (props.hasOwnProperty(&#x27;key&#x27;)) {
+    if (props.hasOwnProperty('key')) {
         key = props.key;
         props.key = undefined;
     }
 
     // support namespace
-    if (props.hasOwnProperty(&#x27;namespace&#x27;)) {
+    if (props.hasOwnProperty('namespace')) {
         namespace = props.namespace;
         props.namespace = undefined;
     }
 
     // fix cursor bug
-    if (tag === &#x27;INPUT&#x27; &#x26;&#x26;
-        !namespace &#x26;&#x26;
-        props.hasOwnProperty(&#x27;value&#x27;) &#x26;&#x26;
-        props.value !== undefined &#x26;&#x26;
+    if (tag === 'INPUT' &amp;&amp;
+        !namespace &amp;&amp;
+        props.hasOwnProperty('value') &amp;&amp;
+        props.value !== undefined &amp;&amp;
         !isHook(props.value)
     ) {
         props.value = softSetHook(props.value);
@@ -1526,7 +1519,7 @@ var parentNode = domNode.parentNode
 
     transformProperties(props);
 
-    if (children !== undefined &#x26;&#x26; children !== null) {
+    if (children !== undefined &amp;&amp; children !== null) {
         addChild(children, childNodes, tag, props);
     }
 
@@ -1585,7 +1578,7 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isThunk(t) {
-    return t &#x26;&#x26; t.type === &#x22;Thunk&#x22;
+    return t &amp;&amp; t.type === "Thunk"
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1605,9 +1598,9 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isHook(hook) {
-    return hook &#x26;&#x26;
-      (typeof hook.hook === &#x22;function&#x22; &#x26;&#x26; !hook.hasOwnProperty(&#x22;hook&#x22;) ||
-       typeof hook.unhook === &#x22;function&#x22; &#x26;&#x26; !hook.hasOwnProperty(&#x22;unhook&#x22;))
+    return hook &amp;&amp;
+      (typeof hook.hook === "function" &amp;&amp; !hook.hasOwnProperty("hook") ||
+       typeof hook.unhook === "function" &amp;&amp; !hook.hasOwnProperty("unhook"))
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1627,7 +1620,7 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isVirtualNode(x) {
-    return x &#x26;&#x26; x.type === &#x22;VirtualNode&#x22; &#x26;&#x26; x.version === version
+    return x &amp;&amp; x.type === "VirtualNode" &amp;&amp; x.version === version
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1647,7 +1640,7 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isVirtualText(x) {
-    return x &#x26;&#x26; x.type === &#x22;VirtualText&#x22; &#x26;&#x26; x.version === version
+    return x &amp;&amp; x.type === "VirtualText" &amp;&amp; x.version === version
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1667,7 +1660,7 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isWidget(w) {
-    return w &#x26;&#x26; w.type === &#x22;Widget&#x22;
+    return w &amp;&amp; w.type === "Widget"
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1688,21 +1681,21 @@ var parentNode = domNode.parentNode
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseTag(tag, props) {
     if (!tag) {
-        return &#x27;DIV&#x27;;
+        return 'DIV';
     }
 
-    var noId = !(props.hasOwnProperty(&#x27;id&#x27;));
+    var noId = !(props.hasOwnProperty('id'));
 
     var tagParts = split(tag, classIdSplit);
     var tagName = null;
 
     if (notClassId.test(tagParts[1])) {
-        tagName = &#x27;DIV&#x27;;
+        tagName = 'DIV';
     }
 
     var classes, part, type, i;
 
-    for (i = 0; i &#x3c; tagParts.length; i++) {
+    for (i = 0; i &lt; tagParts.length; i++) {
         part = tagParts[i];
 
         if (!part) {
@@ -1713,10 +1706,10 @@ var parentNode = domNode.parentNode
 
         if (!tagName) {
             tagName = part;
-        } else if (type === &#x27;.&#x27;) {
+        } else if (type === '.') {
             classes = classes || [];
             classes.push(part.substring(1, part.length));
-        } else if (type === &#x27;#&#x27; &#x26;&#x26; noId) {
+        } else if (type === '#' &amp;&amp; noId) {
             props.id = part.substring(1, part.length);
         }
     }
@@ -1726,7 +1719,7 @@ var parentNode = domNode.parentNode
             classes.push(props.className);
         }
 
-        props.className = classes.join(&#x27; &#x27;);
+        props.className = classes.join(' ');
     }
 
     return props.namespace ? tagName : tagName.toUpperCase();
@@ -1750,7 +1743,7 @@ var parentNode = domNode.parentNode
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function patch(rootNode, patches, renderOptions) {
     renderOptions = renderOptions || {}
-    renderOptions.patch = renderOptions.patch &#x26;&#x26; renderOptions.patch !== patch
+    renderOptions.patch = renderOptions.patch &amp;&amp; renderOptions.patch !== patch
         ? renderOptions.patch
         : patchRecursive
     renderOptions.render = renderOptions.render || render
@@ -1837,7 +1830,7 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function svg(tagName, properties, children) {
-    if (!children &#x26;&#x26; isChildren(properties)) {
+    if (!children &amp;&amp; isChildren(properties)) {
         children = properties;
         properties = {};
     }
@@ -1862,9 +1855,9 @@ var parentNode = domNode.parentNode
 
         var value = properties[key];
 
-        if (typeof value !== &#x27;string&#x27; &#x26;&#x26;
-            typeof value !== &#x27;number&#x27; &#x26;&#x26;
-            typeof value !== &#x27;boolean&#x27;
+        if (typeof value !== 'string' &amp;&amp;
+            typeof value !== 'number' &amp;&amp;
+            typeof value !== 'boolean'
         ) {
             continue;
         }
@@ -1920,8 +1913,8 @@ var parentNode = domNode.parentNode
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function updateWidget(a, b) {
-    if (isWidget(a) &#x26;&#x26; isWidget(b)) {
-        if (&#x22;name&#x22; in a &#x26;&#x26; &#x22;name&#x22; in b) {
+    if (isWidget(a) &amp;&amp; isWidget(b)) {
+        if ("name" in a &amp;&amp; "name" in b) {
             return a.id === b.id
         } else {
             return a.init === b.init
@@ -1982,3 +1975,4 @@ var parentNode = domNode.parentNode
     ]
 </div>
 </div>
+</body></html>
