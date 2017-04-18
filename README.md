@@ -1,9 +1,14 @@
-# api documentation for  [virtual-dom (v2.1.1)](https://github.com/Matt-Esch/virtual-dom)  [![npm package](https://img.shields.io/npm/v/npmdoc-virtual-dom.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-virtual-dom) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-virtual-dom.svg)](https://travis-ci.org/npmdoc/node-npmdoc-virtual-dom)
+# npmdoc-virtual-dom
+
+#### api documentation for  [virtual-dom (v2.1.1)](https://github.com/Matt-Esch/virtual-dom)  [![npm package](https://img.shields.io/npm/v/npmdoc-virtual-dom.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-virtual-dom) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-virtual-dom.svg)](https://travis-ci.org/npmdoc/node-npmdoc-virtual-dom)
+
 #### A batched diff-based DOM rendering strategy
 
-[![NPM](https://nodei.co/npm/virtual-dom.png?downloads=true)](https://www.npmjs.com/package/virtual-dom)
+[![NPM](https://nodei.co/npm/virtual-dom.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/virtual-dom)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-virtual-dom_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-virtual-dom/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-virtual-dom/build/screenCapture.npmPackageListing.svg)
 
@@ -17,12 +22,10 @@
 
 {
     "author": {
-        "name": "Matt-Esch",
-        "email": "matt@mattesch.info"
+        "name": "Matt-Esch"
     },
     "bugs": {
-        "url": "https://github.com/Matt-Esch/virtual-dom/issues",
-        "email": "matt@mattesch.info"
+        "url": "https://github.com/Matt-Esch/virtual-dom/issues"
     },
     "contributors": [
         {
@@ -71,13 +74,11 @@
     "main": "index",
     "maintainers": [
         {
-            "name": "mattesch",
-            "email": "matt@mattesch.info"
+            "name": "mattesch"
         }
     ],
     "name": "virtual-dom",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/Matt-Esch/virtual-dom.git"
@@ -115,245 +116,6 @@
     },
     "version": "2.1.1"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module virtual-dom](#apidoc.module.virtual-dom)
-1.  [function <span class="apidocSignatureSpan">virtual-dom.</span>VNode (tagName, properties, children, key, namespace)](#apidoc.element.virtual-dom.VNode)
-1.  [function <span class="apidocSignatureSpan">virtual-dom.</span>VText (text)](#apidoc.element.virtual-dom.VText)
-1.  [function <span class="apidocSignatureSpan">virtual-dom.</span>create (vnode, opts)](#apidoc.element.virtual-dom.create)
-1.  [function <span class="apidocSignatureSpan">virtual-dom.</span>diff (a, b)](#apidoc.element.virtual-dom.diff)
-1.  [function <span class="apidocSignatureSpan">virtual-dom.</span>h (tagName, properties, children)](#apidoc.element.virtual-dom.h)
-1.  [function <span class="apidocSignatureSpan">virtual-dom.</span>patch (rootNode, patches, renderOptions)](#apidoc.element.virtual-dom.patch)
-
-
-
-# <a name="apidoc.module.virtual-dom"></a>[module virtual-dom](#apidoc.module.virtual-dom)
-
-#### <a name="apidoc.element.virtual-dom.VNode"></a>[function <span class="apidocSignatureSpan">virtual-dom.</span>VNode (tagName, properties, children, key, namespace)](#apidoc.element.virtual-dom.VNode)
-- description and source-code
-```javascript
-function VirtualNode(tagName, properties, children, key, namespace) {
-    this.tagName = tagName
-    this.properties = properties || noProperties
-    this.children = children || noChildren
-    this.key = key != null ? String(key) : undefined
-    this.namespace = (typeof namespace === "string") ? namespace : null
-
-    var count = (children && children.length) || 0
-    var descendants = 0
-    var hasWidgets = false
-    var hasThunks = false
-    var descendantHooks = false
-    var hooks
-
-    for (var propName in properties) {
-        if (properties.hasOwnProperty(propName)) {
-            var property = properties[propName]
-            if (isVHook(property) && property.unhook) {
-                if (!hooks) {
-                    hooks = {}
-                }
-
-                hooks[propName] = property
-            }
-        }
-    }
-
-    for (var i = 0; i < count; i++) {
-        var child = children[i]
-        if (isVNode(child)) {
-            descendants += child.count || 0
-
-            if (!hasWidgets && child.hasWidgets) {
-                hasWidgets = true
-            }
-
-            if (!hasThunks && child.hasThunks) {
-                hasThunks = true
-            }
-
-            if (!descendantHooks && (child.hooks || child.descendantHooks)) {
-                descendantHooks = true
-            }
-        } else if (!hasWidgets && isWidget(child)) {
-            if (typeof child.destroy === "function") {
-                hasWidgets = true
-            }
-        } else if (!hasThunks && isThunk(child)) {
-            hasThunks = true;
-        }
-    }
-
-    this.count = count + descendants
-    this.hasWidgets = hasWidgets
-    this.hasThunks = hasThunks
-    this.hooks = hooks
-    this.descendantHooks = descendantHooks
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.virtual-dom.VText"></a>[function <span class="apidocSignatureSpan">virtual-dom.</span>VText (text)](#apidoc.element.virtual-dom.VText)
-- description and source-code
-```javascript
-function VirtualText(text) {
-    this.text = String(text)
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.virtual-dom.create"></a>[function <span class="apidocSignatureSpan">virtual-dom.</span>create (vnode, opts)](#apidoc.element.virtual-dom.create)
-- description and source-code
-```javascript
-function createElement(vnode, opts) {
-    var doc = opts ? opts.document || document : document
-    var warn = opts ? opts.warn : null
-
-    vnode = handleThunk(vnode).a
-
-    if (isWidget(vnode)) {
-        return vnode.init()
-    } else if (isVText(vnode)) {
-        return doc.createTextNode(vnode.text)
-    } else if (!isVNode(vnode)) {
-        if (warn) {
-            warn("Item is not a valid virtual dom node", vnode)
-        }
-        return null
-    }
-
-    var node = (vnode.namespace === null) ?
-        doc.createElement(vnode.tagName) :
-        doc.createElementNS(vnode.namespace, vnode.tagName)
-
-    var props = vnode.properties
-    applyProperties(node, props)
-
-    var children = vnode.children
-
-    for (var i = 0; i < children.length; i++) {
-        var childNode = createElement(children[i], opts)
-        if (childNode) {
-            node.appendChild(childNode)
-        }
-    }
-
-    return node
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.virtual-dom.diff"></a>[function <span class="apidocSignatureSpan">virtual-dom.</span>diff (a, b)](#apidoc.element.virtual-dom.diff)
-- description and source-code
-```javascript
-function diff(a, b) {
-    var patch = { a: a }
-    walk(a, b, patch, 0)
-    return patch
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.virtual-dom.h"></a>[function <span class="apidocSignatureSpan">virtual-dom.</span>h (tagName, properties, children)](#apidoc.element.virtual-dom.h)
-- description and source-code
-```javascript
-function h(tagName, properties, children) {
-    var childNodes = [];
-    var tag, props, key, namespace;
-
-    if (!children && isChildren(properties)) {
-        children = properties;
-        props = {};
-    }
-
-    props = props || properties || {};
-    tag = parseTag(tagName, props);
-
-    // support keys
-    if (props.hasOwnProperty('key')) {
-        key = props.key;
-        props.key = undefined;
-    }
-
-    // support namespace
-    if (props.hasOwnProperty('namespace')) {
-        namespace = props.namespace;
-        props.namespace = undefined;
-    }
-
-    // fix cursor bug
-    if (tag === 'INPUT' &&
-        !namespace &&
-        props.hasOwnProperty('value') &&
-        props.value !== undefined &&
-        !isHook(props.value)
-    ) {
-        props.value = softSetHook(props.value);
-    }
-
-    transformProperties(props);
-
-    if (children !== undefined && children !== null) {
-        addChild(children, childNodes, tag, props);
-    }
-
-
-    return new VNode(tag, props, childNodes, key, namespace);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.virtual-dom.patch"></a>[function <span class="apidocSignatureSpan">virtual-dom.</span>patch (rootNode, patches, renderOptions)](#apidoc.element.virtual-dom.patch)
-- description and source-code
-```javascript
-function patch(rootNode, patches, renderOptions) {
-    renderOptions = renderOptions || {}
-    renderOptions.patch = renderOptions.patch && renderOptions.patch !== patch
-        ? renderOptions.patch
-        : patchRecursive
-    renderOptions.render = renderOptions.render || render
-
-    return renderOptions.patch(rootNode, patches, renderOptions)
-}
-```
-- example usage
-```shell
-...
-        reorderChildren(domNode, patch)
-        return domNode
-    case VPatch.PROPS:
-        applyProperties(domNode, patch, vNode.properties)
-        return domNode
-    case VPatch.THUNK:
-        return replaceRoot(domNode,
-            renderOptions.patch(domNode, patch, renderOptions))
-    default:
-        return domNode
-}
-}
-
-function removeNode(domNode, vNode) {
-var parentNode = domNode.parentNode
-...
 ```
 
 
