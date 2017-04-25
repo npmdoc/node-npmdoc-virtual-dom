@@ -1,6 +1,6 @@
 # npmdoc-virtual-dom
 
-#### api documentation for  [virtual-dom (v2.1.1)](https://github.com/Matt-Esch/virtual-dom)  [![npm package](https://img.shields.io/npm/v/npmdoc-virtual-dom.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-virtual-dom) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-virtual-dom.svg)](https://travis-ci.org/npmdoc/node-npmdoc-virtual-dom)
+#### basic api documentation for  [virtual-dom (v2.1.1)](https://github.com/Matt-Esch/virtual-dom)  [![npm package](https://img.shields.io/npm/v/npmdoc-virtual-dom.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-virtual-dom) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-virtual-dom.svg)](https://travis-ci.org/npmdoc/node-npmdoc-virtual-dom)
 
 #### A batched diff-based DOM rendering strategy
 
@@ -114,7 +114,8 @@
             "android-browser/4.2..latest"
         ]
     },
-    "version": "2.1.1"
+    "version": "2.1.1",
+    "bin": {}
 }
 ```
 
