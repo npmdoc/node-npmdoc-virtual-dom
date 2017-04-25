@@ -12,7 +12,7 @@
 <tspan x="10" y="154">  │ └── xtend@4.0.1 </tspan>
 <tspan x="10" y="170">  ├─┬ ev-store@7.0.0 </tspan>
 <tspan x="10" y="186">  │ └── individual@3.0.0 </tspan>
-<tspan x="10" y="202">  ├─┬ global@4.3.1 </tspan>
+<tspan x="10" y="202">  ├─┬ global@4.3.2 </tspan>
 <tspan x="10" y="218">  │ ├─┬ min-document@2.19.0 </tspan>
 <tspan x="10" y="234">  │ │ └── dom-walk@0.1.1 </tspan>
 <tspan x="10" y="250">  │ └── process@0.5.2 </tspan>

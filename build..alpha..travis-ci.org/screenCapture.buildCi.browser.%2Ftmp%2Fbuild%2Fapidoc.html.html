@@ -74,9 +74,9 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.apply_properties">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>apply_properties
-            <span class="apidocSignatureSpan">(node, props, previous)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.attribute_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>attribute_hook
+            <span class="apidocSignatureSpan">(namespace, value)</span>
             </a>
 
         </li>
@@ -101,9 +101,18 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.diff_props">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>diff_props
-            <span class="apidocSignatureSpan">(a, b)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.ev_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>ev_hook
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.focus_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>focus_hook
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -119,69 +128,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.handle_thunk">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>handle_thunk
-            <span class="apidocSignatureSpan">(a, b)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_thunk">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_thunk
-            <span class="apidocSignatureSpan">(t)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_vhook">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_vhook
-            <span class="apidocSignatureSpan">(hook)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_vnode">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_vnode
-            <span class="apidocSignatureSpan">(x)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_vtext">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_vtext
-            <span class="apidocSignatureSpan">(x)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_widget">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_widget
-            <span class="apidocSignatureSpan">(w)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.parse_tag">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>parse_tag
-            <span class="apidocSignatureSpan">(tag, props)</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.patch">
             function <span class="apidocSignatureSpan">virtual-dom.</span>patch
             <span class="apidocSignatureSpan">(rootNode, patches, renderOptions)</span>
@@ -191,26 +137,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.patch_op">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>patch_op
-            <span class="apidocSignatureSpan">(vpatch, domNode, renderOptions)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.svg">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>svg
-            <span class="apidocSignatureSpan">(tagName, properties, children)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.svg_attribute_namespace">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>svg_attribute_namespace
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.soft_set_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>soft_set_hook
             <span class="apidocSignatureSpan">(value)</span>
             </a>
 
@@ -218,251 +146,77 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.update_widget">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>update_widget
-            <span class="apidocSignatureSpan">(a, b)</span>
-            </a>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">virtual-dom.</span>attribute_hook.prototype</span>
 
         </li>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.vpatch">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>vpatch
-            <span class="apidocSignatureSpan">(type, vNode, patch)</span>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">virtual-dom.</span>ev_hook.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">virtual-dom.</span>focus_hook.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">virtual-dom.</span>soft_set_hook.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.attribute_hook">module virtual-dom.attribute_hook</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.attribute_hook.attribute_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>attribute_hook
+            <span class="apidocSignatureSpan">(namespace, value)</span>
             </a>
 
         </li>
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.VNode">module virtual-dom.VNode</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.attribute_hook.prototype">module virtual-dom.attribute_hook.prototype</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.VNode.VNode">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>VNode
-            <span class="apidocSignatureSpan">(tagName, properties, children, key, namespace)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.attribute_hook.prototype.hook">
+            function <span class="apidocSignatureSpan">virtual-dom.attribute_hook.prototype.</span>hook
+            <span class="apidocSignatureSpan">(node, prop, prev)</span>
             </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.attribute_hook.prototype.unhook">
+            function <span class="apidocSignatureSpan">virtual-dom.attribute_hook.prototype.</span>unhook
+            <span class="apidocSignatureSpan">(node, prop, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">virtual-dom.attribute_hook.prototype.</span>type</span>
 
         </li>
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.VText">module virtual-dom.VText</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.ev_hook">module virtual-dom.ev_hook</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.VText.VText">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>VText
-            <span class="apidocSignatureSpan">(text)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.apply_properties">module virtual-dom.apply_properties</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.apply_properties.apply_properties">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>apply_properties
-            <span class="apidocSignatureSpan">(node, props, previous)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.create">module virtual-dom.create</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.create.create">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>create
-            <span class="apidocSignatureSpan">(vnode, opts)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.diff">module virtual-dom.diff</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.diff.diff">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>diff
-            <span class="apidocSignatureSpan">(a, b)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.diff_props">module virtual-dom.diff_props</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.diff_props.diff_props">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>diff_props
-            <span class="apidocSignatureSpan">(a, b)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.h">module virtual-dom.h</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.h.h">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>h
-            <span class="apidocSignatureSpan">(tagName, properties, children)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.handle_thunk">module virtual-dom.handle_thunk</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.handle_thunk.handle_thunk">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>handle_thunk
-            <span class="apidocSignatureSpan">(a, b)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.is_thunk">module virtual-dom.is_thunk</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_thunk.is_thunk">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_thunk
-            <span class="apidocSignatureSpan">(t)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.is_vhook">module virtual-dom.is_vhook</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_vhook.is_vhook">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_vhook
-            <span class="apidocSignatureSpan">(hook)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.is_vnode">module virtual-dom.is_vnode</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_vnode.is_vnode">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_vnode
-            <span class="apidocSignatureSpan">(x)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.is_vtext">module virtual-dom.is_vtext</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_vtext.is_vtext">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_vtext
-            <span class="apidocSignatureSpan">(x)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.is_widget">module virtual-dom.is_widget</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.is_widget.is_widget">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>is_widget
-            <span class="apidocSignatureSpan">(w)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.parse_tag">module virtual-dom.parse_tag</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.parse_tag.parse_tag">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>parse_tag
-            <span class="apidocSignatureSpan">(tag, props)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.patch">module virtual-dom.patch</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.patch.patch">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>patch
-            <span class="apidocSignatureSpan">(rootNode, patches, renderOptions)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.patch_op">module virtual-dom.patch_op</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.patch_op.patch_op">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>patch_op
-            <span class="apidocSignatureSpan">(vpatch, domNode, renderOptions)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.svg">module virtual-dom.svg</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.svg.svg">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>svg
-            <span class="apidocSignatureSpan">(tagName, properties, children)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.svg_attribute_namespace">module virtual-dom.svg_attribute_namespace</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.svg_attribute_namespace.svg_attribute_namespace">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>svg_attribute_namespace
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.ev_hook.ev_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>ev_hook
             <span class="apidocSignatureSpan">(value)</span>
             </a>
 
@@ -470,81 +224,75 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.update_widget">module virtual-dom.update_widget</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.ev_hook.prototype">module virtual-dom.ev_hook.prototype</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.update_widget.update_widget">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>update_widget
-            <span class="apidocSignatureSpan">(a, b)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.ev_hook.prototype.hook">
+            function <span class="apidocSignatureSpan">virtual-dom.ev_hook.prototype.</span>hook
+            <span class="apidocSignatureSpan">(node, propertyName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.ev_hook.prototype.unhook">
+            function <span class="apidocSignatureSpan">virtual-dom.ev_hook.prototype.</span>unhook
+            <span class="apidocSignatureSpan">(node, propertyName)</span>
             </a>
 
         </li>
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.vpatch">module virtual-dom.vpatch</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.focus_hook">module virtual-dom.focus_hook</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.vpatch.vpatch">
-            function <span class="apidocSignatureSpan">virtual-dom.</span>vpatch
-            <span class="apidocSignatureSpan">(type, vNode, patch)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.focus_hook.focus_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>focus_hook
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
 
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.focus_hook.prototype">module virtual-dom.focus_hook.prototype</a><ol>
+
         <li>
 
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>INSERT</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.focus_hook.prototype.hook">
+            function <span class="apidocSignatureSpan">virtual-dom.focus_hook.prototype.</span>hook
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
 
         </li>
 
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.soft_set_hook">module virtual-dom.soft_set_hook</a><ol>
+
         <li>
 
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>NONE</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.soft_set_hook.soft_set_hook">
+            function <span class="apidocSignatureSpan">virtual-dom.</span>soft_set_hook
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
 
         </li>
 
-        <li>
+    </ol></li>
 
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>ORDER</span>
-
-        </li>
+    <li class="apidocModuleLi"><a href="#apidoc.module.virtual-dom.soft_set_hook.prototype">module virtual-dom.soft_set_hook.prototype</a><ol>
 
         <li>
 
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>PROPS</span>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>REMOVE</span>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>THUNK</span>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>VNODE</span>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>VTEXT</span>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">virtual-dom.vpatch.</span>WIDGET</span>
+            <a class="apidocElementLiA" href="#apidoc.element.virtual-dom.soft_set_hook.prototype.hook">
+            function <span class="apidocSignatureSpan">virtual-dom.soft_set_hook.prototype.</span>hook
+            <span class="apidocSignatureSpan">(node, propertyName)</span>
+            </a>
 
         </li>
 
@@ -642,33 +390,19 @@
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.apply_properties" id="apidoc.element.virtual-dom.apply_properties">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>apply_properties
-        <span class="apidocSignatureSpan">(node, props, previous)</span>
+        <a href="#apidoc.element.virtual-dom.attribute_hook" id="apidoc.element.virtual-dom.attribute_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>attribute_hook
+        <span class="apidocSignatureSpan">(namespace, value)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function applyProperties(node, props, previous) {
-    for (var propName in props) {
-        var propValue = props[propName]
-
-        if (propValue === undefined) {
-            removeProperty(node, propName, propValue, previous);
-        } else if (isHook(propValue)) {
-            removeProperty(node, propName, propValue, previous)
-            if (propValue.hook) {
-                propValue.hook(node,
-                    propName,
-                    previous ? previous[propName] : undefined)
-            }
-        } else {
-            if (isObject(propValue)) {
-                patchObject(node, props, previous, propName, propValue);
-            } else {
-                node[propName] = propValue
-            }
-        }
+    <li>description and source-code<pre class="apidocCodePre">function AttributeHook(namespace, value) {
+    if (!(this instanceof AttributeHook)) {
+        return new AttributeHook(namespace, value);
     }
+
+    this.namespace = namespace;
+    this.value = value;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -740,54 +474,35 @@
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.diff_props" id="apidoc.element.virtual-dom.diff_props">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>diff_props
-        <span class="apidocSignatureSpan">(a, b)</span>
+        <a href="#apidoc.element.virtual-dom.ev_hook" id="apidoc.element.virtual-dom.ev_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>ev_hook
+        <span class="apidocSignatureSpan">(value)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function diffProps(a, b) {
-    var diff
-
-    for (var aKey in a) {
-        if (!(aKey in b)) {
-            diff = diff || {}
-            diff[aKey] = undefined
-        }
-
-        var aValue = a[aKey]
-        var bValue = b[aKey]
-
-        if (aValue === bValue) {
-            continue
-        } else if (isObject(aValue) &amp;&amp; isObject(bValue)) {
-            if (getPrototype(bValue) !== getPrototype(aValue)) {
-                diff = diff || {}
-                diff[aKey] = bValue
-            } else if (isHook(bValue)) {
-                 diff = diff || {}
-                 diff[aKey] = bValue
-            } else {
-                var objectDiff = diffProps(aValue, bValue)
-                if (objectDiff) {
-                    diff = diff || {}
-                    diff[aKey] = objectDiff
-                }
-            }
-        } else {
-            diff = diff || {}
-            diff[aKey] = bValue
-        }
+    <li>description and source-code<pre class="apidocCodePre">function EvHook(value) {
+    if (!(this instanceof EvHook)) {
+        return new EvHook(value);
     }
 
-    for (var bKey in b) {
-        if (!(bKey in a)) {
-            diff = diff || {}
-            diff[bKey] = b[bKey]
-        }
-    }
+    this.value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
-    return diff
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.focus_hook" id="apidoc.element.virtual-dom.focus_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>focus_hook
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MutableFocusHook() {
+    if (!(this instanceof MutableFocusHook)) {
+        return new MutableFocusHook();
+    }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -850,169 +565,6 @@
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.handle_thunk" id="apidoc.element.virtual-dom.handle_thunk">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>handle_thunk
-        <span class="apidocSignatureSpan">(a, b)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function handleThunk(a, b) {
-    var renderedA = a
-    var renderedB = b
-
-    if (isThunk(b)) {
-        renderedB = renderThunk(b, a)
-    }
-
-    if (isThunk(a)) {
-        renderedA = renderThunk(a, null)
-    }
-
-    return {
-        a: renderedA,
-        b: renderedB
-    }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_thunk" id="apidoc.element.virtual-dom.is_thunk">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_thunk
-        <span class="apidocSignatureSpan">(t)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isThunk(t) {
-    return t &amp;&amp; t.type === "Thunk"
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_vhook" id="apidoc.element.virtual-dom.is_vhook">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_vhook
-        <span class="apidocSignatureSpan">(hook)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isHook(hook) {
-    return hook &amp;&amp;
-      (typeof hook.hook === "function" &amp;&amp; !hook.hasOwnProperty("hook") ||
-       typeof hook.unhook === "function" &amp;&amp; !hook.hasOwnProperty("unhook"))
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_vnode" id="apidoc.element.virtual-dom.is_vnode">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_vnode
-        <span class="apidocSignatureSpan">(x)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isVirtualNode(x) {
-    return x &amp;&amp; x.type === "VirtualNode" &amp;&amp; x.version === version
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_vtext" id="apidoc.element.virtual-dom.is_vtext">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_vtext
-        <span class="apidocSignatureSpan">(x)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isVirtualText(x) {
-    return x &amp;&amp; x.type === "VirtualText" &amp;&amp; x.version === version
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_widget" id="apidoc.element.virtual-dom.is_widget">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_widget
-        <span class="apidocSignatureSpan">(w)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isWidget(w) {
-    return w &amp;&amp; w.type === "Widget"
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.parse_tag" id="apidoc.element.virtual-dom.parse_tag">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>parse_tag
-        <span class="apidocSignatureSpan">(tag, props)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function parseTag(tag, props) {
-    if (!tag) {
-        return 'DIV';
-    }
-
-    var noId = !(props.hasOwnProperty('id'));
-
-    var tagParts = split(tag, classIdSplit);
-    var tagName = null;
-
-    if (notClassId.test(tagParts[1])) {
-        tagName = 'DIV';
-    }
-
-    var classes, part, type, i;
-
-    for (i = 0; i &lt; tagParts.length; i++) {
-        part = tagParts[i];
-
-        if (!part) {
-            continue;
-        }
-
-        type = part.charAt(0);
-
-        if (!tagName) {
-            tagName = part;
-        } else if (type === '.') {
-            classes = classes || [];
-            classes.push(part.substring(1, part.length));
-        } else if (type === '#' &amp;&amp; noId) {
-            props.id = part.substring(1, part.length);
-        }
-    }
-
-    if (classes) {
-        if (props.className) {
-            classes.push(props.className);
-        }
-
-        props.className = classes.join(' ');
-    }
-
-    return props.namespace ? tagName : tagName.toUpperCase();
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.virtual-dom.patch" id="apidoc.element.virtual-dom.patch">
         function <span class="apidocSignatureSpan">virtual-dom.</span>patch
         <span class="apidocSignatureSpan">(rootNode, patches, renderOptions)</span>
@@ -1050,153 +602,51 @@ var parentNode = domNode.parentNode
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.patch_op" id="apidoc.element.virtual-dom.patch_op">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>patch_op
-        <span class="apidocSignatureSpan">(vpatch, domNode, renderOptions)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function applyPatch(vpatch, domNode, renderOptions) {
-    var type = vpatch.type
-    var vNode = vpatch.vNode
-    var patch = vpatch.patch
-
-    switch (type) {
-        case VPatch.REMOVE:
-            return removeNode(domNode, vNode)
-        case VPatch.INSERT:
-            return insertNode(domNode, patch, renderOptions)
-        case VPatch.VTEXT:
-            return stringPatch(domNode, vNode, patch, renderOptions)
-        case VPatch.WIDGET:
-            return widgetPatch(domNode, vNode, patch, renderOptions)
-        case VPatch.VNODE:
-            return vNodePatch(domNode, vNode, patch, renderOptions)
-        case VPatch.ORDER:
-            reorderChildren(domNode, patch)
-            return domNode
-        case VPatch.PROPS:
-            applyProperties(domNode, patch, vNode.properties)
-            return domNode
-        case VPatch.THUNK:
-            return replaceRoot(domNode,
-                renderOptions.patch(domNode, patch, renderOptions))
-        default:
-            return domNode
-    }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.svg" id="apidoc.element.virtual-dom.svg">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>svg
-        <span class="apidocSignatureSpan">(tagName, properties, children)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function svg(tagName, properties, children) {
-    if (!children &amp;&amp; isChildren(properties)) {
-        children = properties;
-        properties = {};
-    }
-
-    properties = properties || {};
-
-    // set namespace for svg
-    properties.namespace = SVG_NAMESPACE;
-
-    var attributes = properties.attributes || (properties.attributes = {});
-
-    for (var key in properties) {
-        if (!properties.hasOwnProperty(key)) {
-            continue;
-        }
-
-        var namespace = SVGAttributeNamespace(key);
-
-        if (namespace === undefined) { // not a svg attribute
-            continue;
-        }
-
-        var value = properties[key];
-
-        if (typeof value !== 'string' &amp;&amp;
-            typeof value !== 'number' &amp;&amp;
-            typeof value !== 'boolean'
-        ) {
-            continue;
-        }
-
-        if (namespace !== null) { // namespaced attribute
-            properties[key] = attributeHook(namespace, value);
-            continue;
-        }
-
-        attributes[key] = value
-        properties[key] = undefined
-    }
-
-    return h(tagName, properties, children);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.svg_attribute_namespace" id="apidoc.element.virtual-dom.svg_attribute_namespace">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>svg_attribute_namespace
+        <a href="#apidoc.element.virtual-dom.soft_set_hook" id="apidoc.element.virtual-dom.soft_set_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>soft_set_hook
         <span class="apidocSignatureSpan">(value)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function SVGAttributeNamespace(value) {
-  if (SVG_PROPERTIES.hasOwnProperty(value)) {
-    return SVG_PROPERTIES[value];
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.update_widget" id="apidoc.element.virtual-dom.update_widget">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>update_widget
-        <span class="apidocSignatureSpan">(a, b)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function updateWidget(a, b) {
-    if (isWidget(a) &amp;&amp; isWidget(b)) {
-        if ("name" in a &amp;&amp; "name" in b) {
-            return a.id === b.id
-        } else {
-            return a.init === b.init
-        }
+    <li>description and source-code<pre class="apidocCodePre">function SoftSetHook(value) {
+    if (!(this instanceof SoftSetHook)) {
+        return new SoftSetHook(value);
     }
 
-    return false
+    this.value = value;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
 
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.virtual-dom.attribute_hook" id="apidoc.module.virtual-dom.attribute_hook">module virtual-dom.attribute_hook</a></h1>
+
+
     <h2>
-        <a href="#apidoc.element.virtual-dom.vpatch" id="apidoc.element.virtual-dom.vpatch">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>vpatch
-        <span class="apidocSignatureSpan">(type, vNode, patch)</span>
+        <a href="#apidoc.element.virtual-dom.attribute_hook.attribute_hook" id="apidoc.element.virtual-dom.attribute_hook.attribute_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>attribute_hook
+        <span class="apidocSignatureSpan">(namespace, value)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function VirtualPatch(type, vNode, patch) {
-    this.type = Number(type)
-    this.vNode = vNode
-    this.patch = patch
+    <li>description and source-code<pre class="apidocCodePre">function AttributeHook(namespace, value) {
+    if (!(this instanceof AttributeHook)) {
+        return new AttributeHook(namespace, value);
+    }
+
+    this.namespace = namespace;
+    this.value = value;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1205,567 +655,176 @@ var parentNode = domNode.parentNode
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.VNode" id="apidoc.module.virtual-dom.VNode">module virtual-dom.VNode</a></h1>
+<h1><a href="#apidoc.module.virtual-dom.attribute_hook.prototype" id="apidoc.module.virtual-dom.attribute_hook.prototype">module virtual-dom.attribute_hook.prototype</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.VNode.VNode" id="apidoc.element.virtual-dom.VNode.VNode">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>VNode
-        <span class="apidocSignatureSpan">(tagName, properties, children, key, namespace)</span>
+        <a href="#apidoc.element.virtual-dom.attribute_hook.prototype.hook" id="apidoc.element.virtual-dom.attribute_hook.prototype.hook">
+        function <span class="apidocSignatureSpan">virtual-dom.attribute_hook.prototype.</span>hook
+        <span class="apidocSignatureSpan">(node, prop, prev)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function VirtualNode(tagName, properties, children, key, namespace) {
-    this.tagName = tagName
-    this.properties = properties || noProperties
-    this.children = children || noChildren
-    this.key = key != null ? String(key) : undefined
-    this.namespace = (typeof namespace === "string") ? namespace : null
-
-    var count = (children &amp;&amp; children.length) || 0
-    var descendants = 0
-    var hasWidgets = false
-    var hasThunks = false
-    var descendantHooks = false
-    var hooks
-
-    for (var propName in properties) {
-        if (properties.hasOwnProperty(propName)) {
-            var property = properties[propName]
-            if (isVHook(property) &amp;&amp; property.unhook) {
-                if (!hooks) {
-                    hooks = {}
-                }
-
-                hooks[propName] = property
-            }
-        }
+    <li>description and source-code<pre class="apidocCodePre">hook = function (node, prop, prev) {
+    if (prev &amp;&amp; prev.type === 'AttributeHook' &amp;&amp;
+        prev.value === this.value &amp;&amp;
+        prev.namespace === this.namespace) {
+        return;
     }
 
-    for (var i = 0; i &lt; count; i++) {
-        var child = children[i]
-        if (isVNode(child)) {
-            descendants += child.count || 0
-
-            if (!hasWidgets &amp;&amp; child.hasWidgets) {
-                hasWidgets = true
-            }
-
-            if (!hasThunks &amp;&amp; child.hasThunks) {
-                hasThunks = true
-            }
-
-            if (!descendantHooks &amp;&amp; (child.hooks || child.descendantHooks)) {
-                descendantHooks = true
-            }
-        } else if (!hasWidgets &amp;&amp; isWidget(child)) {
-            if (typeof child.destroy === "function") {
-                hasWidgets = true
-            }
-        } else if (!hasThunks &amp;&amp; isThunk(child)) {
-            hasThunks = true;
-        }
-    }
-
-    this.count = count + descendants
-    this.hasWidgets = hasWidgets
-    this.hasThunks = hasThunks
-    this.hooks = hooks
-    this.descendantHooks = descendantHooks
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.VText" id="apidoc.module.virtual-dom.VText">module virtual-dom.VText</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.VText.VText" id="apidoc.element.virtual-dom.VText.VText">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>VText
-        <span class="apidocSignatureSpan">(text)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function VirtualText(text) {
-    this.text = String(text)
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.apply_properties" id="apidoc.module.virtual-dom.apply_properties">module virtual-dom.apply_properties</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.apply_properties.apply_properties" id="apidoc.element.virtual-dom.apply_properties.apply_properties">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>apply_properties
-        <span class="apidocSignatureSpan">(node, props, previous)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function applyProperties(node, props, previous) {
-    for (var propName in props) {
-        var propValue = props[propName]
-
-        if (propValue === undefined) {
-            removeProperty(node, propName, propValue, previous);
-        } else if (isHook(propValue)) {
-            removeProperty(node, propName, propValue, previous)
-            if (propValue.hook) {
-                propValue.hook(node,
-                    propName,
-                    previous ? previous[propName] : undefined)
-            }
-        } else {
-            if (isObject(propValue)) {
-                patchObject(node, props, previous, propName, propValue);
-            } else {
-                node[propName] = propValue
-            }
-        }
-    }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.create" id="apidoc.module.virtual-dom.create">module virtual-dom.create</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.create.create" id="apidoc.element.virtual-dom.create.create">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>create
-        <span class="apidocSignatureSpan">(vnode, opts)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function createElement(vnode, opts) {
-    var doc = opts ? opts.document || document : document
-    var warn = opts ? opts.warn : null
-
-    vnode = handleThunk(vnode).a
-
-    if (isWidget(vnode)) {
-        return vnode.init()
-    } else if (isVText(vnode)) {
-        return doc.createTextNode(vnode.text)
-    } else if (!isVNode(vnode)) {
-        if (warn) {
-            warn("Item is not a valid virtual dom node", vnode)
-        }
-        return null
-    }
-
-    var node = (vnode.namespace === null) ?
-        doc.createElement(vnode.tagName) :
-        doc.createElementNS(vnode.namespace, vnode.tagName)
-
-    var props = vnode.properties
-    applyProperties(node, props)
-
-    var children = vnode.children
-
-    for (var i = 0; i &lt; children.length; i++) {
-        var childNode = createElement(children[i], opts)
-        if (childNode) {
-            node.appendChild(childNode)
-        }
-    }
-
-    return node
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.diff" id="apidoc.module.virtual-dom.diff">module virtual-dom.diff</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.diff.diff" id="apidoc.element.virtual-dom.diff.diff">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>diff
-        <span class="apidocSignatureSpan">(a, b)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function diff(a, b) {
-    var patch = { a: a }
-    walk(a, b, patch, 0)
-    return patch
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.diff_props" id="apidoc.module.virtual-dom.diff_props">module virtual-dom.diff_props</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.diff_props.diff_props" id="apidoc.element.virtual-dom.diff_props.diff_props">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>diff_props
-        <span class="apidocSignatureSpan">(a, b)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function diffProps(a, b) {
-    var diff
-
-    for (var aKey in a) {
-        if (!(aKey in b)) {
-            diff = diff || {}
-            diff[aKey] = undefined
-        }
-
-        var aValue = a[aKey]
-        var bValue = b[aKey]
-
-        if (aValue === bValue) {
-            continue
-        } else if (isObject(aValue) &amp;&amp; isObject(bValue)) {
-            if (getPrototype(bValue) !== getPrototype(aValue)) {
-                diff = diff || {}
-                diff[aKey] = bValue
-            } else if (isHook(bValue)) {
-                 diff = diff || {}
-                 diff[aKey] = bValue
-            } else {
-                var objectDiff = diffProps(aValue, bValue)
-                if (objectDiff) {
-                    diff = diff || {}
-                    diff[aKey] = objectDiff
-                }
-            }
-        } else {
-            diff = diff || {}
-            diff[aKey] = bValue
-        }
-    }
-
-    for (var bKey in b) {
-        if (!(bKey in a)) {
-            diff = diff || {}
-            diff[bKey] = b[bKey]
-        }
-    }
-
-    return diff
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.h" id="apidoc.module.virtual-dom.h">module virtual-dom.h</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.h.h" id="apidoc.element.virtual-dom.h.h">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>h
-        <span class="apidocSignatureSpan">(tagName, properties, children)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function h(tagName, properties, children) {
-    var childNodes = [];
-    var tag, props, key, namespace;
-
-    if (!children &amp;&amp; isChildren(properties)) {
-        children = properties;
-        props = {};
-    }
-
-    props = props || properties || {};
-    tag = parseTag(tagName, props);
-
-    // support keys
-    if (props.hasOwnProperty('key')) {
-        key = props.key;
-        props.key = undefined;
-    }
-
-    // support namespace
-    if (props.hasOwnProperty('namespace')) {
-        namespace = props.namespace;
-        props.namespace = undefined;
-    }
-
-    // fix cursor bug
-    if (tag === 'INPUT' &amp;&amp;
-        !namespace &amp;&amp;
-        props.hasOwnProperty('value') &amp;&amp;
-        props.value !== undefined &amp;&amp;
-        !isHook(props.value)
-    ) {
-        props.value = softSetHook(props.value);
-    }
-
-    transformProperties(props);
-
-    if (children !== undefined &amp;&amp; children !== null) {
-        addChild(children, childNodes, tag, props);
-    }
-
-
-    return new VNode(tag, props, childNodes, key, namespace);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.handle_thunk" id="apidoc.module.virtual-dom.handle_thunk">module virtual-dom.handle_thunk</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.handle_thunk.handle_thunk" id="apidoc.element.virtual-dom.handle_thunk.handle_thunk">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>handle_thunk
-        <span class="apidocSignatureSpan">(a, b)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function handleThunk(a, b) {
-    var renderedA = a
-    var renderedB = b
-
-    if (isThunk(b)) {
-        renderedB = renderThunk(b, a)
-    }
-
-    if (isThunk(a)) {
-        renderedA = renderThunk(a, null)
-    }
-
-    return {
-        a: renderedA,
-        b: renderedB
-    }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.is_thunk" id="apidoc.module.virtual-dom.is_thunk">module virtual-dom.is_thunk</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_thunk.is_thunk" id="apidoc.element.virtual-dom.is_thunk.is_thunk">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_thunk
-        <span class="apidocSignatureSpan">(t)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isThunk(t) {
-    return t &amp;&amp; t.type === "Thunk"
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.is_vhook" id="apidoc.module.virtual-dom.is_vhook">module virtual-dom.is_vhook</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_vhook.is_vhook" id="apidoc.element.virtual-dom.is_vhook.is_vhook">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_vhook
-        <span class="apidocSignatureSpan">(hook)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isHook(hook) {
-    return hook &amp;&amp;
-      (typeof hook.hook === "function" &amp;&amp; !hook.hasOwnProperty("hook") ||
-       typeof hook.unhook === "function" &amp;&amp; !hook.hasOwnProperty("unhook"))
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.is_vnode" id="apidoc.module.virtual-dom.is_vnode">module virtual-dom.is_vnode</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_vnode.is_vnode" id="apidoc.element.virtual-dom.is_vnode.is_vnode">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_vnode
-        <span class="apidocSignatureSpan">(x)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isVirtualNode(x) {
-    return x &amp;&amp; x.type === "VirtualNode" &amp;&amp; x.version === version
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.is_vtext" id="apidoc.module.virtual-dom.is_vtext">module virtual-dom.is_vtext</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_vtext.is_vtext" id="apidoc.element.virtual-dom.is_vtext.is_vtext">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_vtext
-        <span class="apidocSignatureSpan">(x)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isVirtualText(x) {
-    return x &amp;&amp; x.type === "VirtualText" &amp;&amp; x.version === version
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.is_widget" id="apidoc.module.virtual-dom.is_widget">module virtual-dom.is_widget</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.is_widget.is_widget" id="apidoc.element.virtual-dom.is_widget.is_widget">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>is_widget
-        <span class="apidocSignatureSpan">(w)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function isWidget(w) {
-    return w &amp;&amp; w.type === "Widget"
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.parse_tag" id="apidoc.module.virtual-dom.parse_tag">module virtual-dom.parse_tag</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.parse_tag.parse_tag" id="apidoc.element.virtual-dom.parse_tag.parse_tag">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>parse_tag
-        <span class="apidocSignatureSpan">(tag, props)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function parseTag(tag, props) {
-    if (!tag) {
-        return 'DIV';
-    }
-
-    var noId = !(props.hasOwnProperty('id'));
-
-    var tagParts = split(tag, classIdSplit);
-    var tagName = null;
-
-    if (notClassId.test(tagParts[1])) {
-        tagName = 'DIV';
-    }
-
-    var classes, part, type, i;
-
-    for (i = 0; i &lt; tagParts.length; i++) {
-        part = tagParts[i];
-
-        if (!part) {
-            continue;
-        }
-
-        type = part.charAt(0);
-
-        if (!tagName) {
-            tagName = part;
-        } else if (type === '.') {
-            classes = classes || [];
-            classes.push(part.substring(1, part.length));
-        } else if (type === '#' &amp;&amp; noId) {
-            props.id = part.substring(1, part.length);
-        }
-    }
-
-    if (classes) {
-        if (props.className) {
-            classes.push(props.className);
-        }
-
-        props.className = classes.join(' ');
-    }
-
-    return props.namespace ? tagName : tagName.toUpperCase();
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.patch" id="apidoc.module.virtual-dom.patch">module virtual-dom.patch</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.patch.patch" id="apidoc.element.virtual-dom.patch.patch">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>patch
-        <span class="apidocSignatureSpan">(rootNode, patches, renderOptions)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function patch(rootNode, patches, renderOptions) {
-    renderOptions = renderOptions || {}
-    renderOptions.patch = renderOptions.patch &amp;&amp; renderOptions.patch !== patch
-        ? renderOptions.patch
-        : patchRecursive
-    renderOptions.render = renderOptions.render || render
-
-    return renderOptions.patch(rootNode, patches, renderOptions)
+    node.setAttributeNS(this.namespace, prop, this.value);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-        reorderChildren(domNode, patch)
-        return domNode
-    case VPatch.PROPS:
-        applyProperties(domNode, patch, vNode.properties)
-        return domNode
-    case VPatch.THUNK:
-        return replaceRoot(domNode,
-            renderOptions.<span class="apidocCodeKeywordSpan">patch</span>(domNode, patch, renderOptions))
-    default:
-        return domNode
+var propValue = props[propName]
+
+if (propValue === undefined) {
+    removeProperty(node, propName, propValue, previous);
+} else if (isHook(propValue)) {
+    removeProperty(node, propName, propValue, previous)
+    if (propValue.hook) {
+        propValue.<span class="apidocCodeKeywordSpan">hook</span>(node,
+            propName,
+            previous ? previous[propName] : undefined)
+    }
+} else {
+    if (isObject(propValue)) {
+        patchObject(node, props, previous, propName, propValue);
+    } else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.attribute_hook.prototype.unhook" id="apidoc.element.virtual-dom.attribute_hook.prototype.unhook">
+        function <span class="apidocSignatureSpan">virtual-dom.attribute_hook.prototype.</span>unhook
+        <span class="apidocSignatureSpan">(node, prop, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unhook = function (node, prop, next) {
+    if (next &amp;&amp; next.type === 'AttributeHook' &amp;&amp;
+        next.namespace === this.namespace) {
+        return;
+    }
+
+    var colonPosition = prop.indexOf(':');
+    var localName = colonPosition &gt; -1 ? prop.substr(colonPosition + 1) : prop;
+    node.removeAttributeNS(this.namespace, localName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            }
+        } else if (typeof previousValue === "string") {
+            node[propName] = ""
+        } else {
+            node[propName] = null
+        }
+    } else if (previousValue.unhook) {
+        previousValue.<span class="apidocCodeKeywordSpan">unhook</span>(node, propName, propValue)
+    }
 }
 }
 
-function removeNode(domNode, vNode) {
-var parentNode = domNode.parentNode
+function patchObject(node, props, previous, propName, propValue) {
+var previousValue = previous ? previous[propName] : undefined
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.virtual-dom.ev_hook" id="apidoc.module.virtual-dom.ev_hook">module virtual-dom.ev_hook</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.ev_hook.ev_hook" id="apidoc.element.virtual-dom.ev_hook.ev_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>ev_hook
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EvHook(value) {
+    if (!(this instanceof EvHook)) {
+        return new EvHook(value);
+    }
+
+    this.value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.virtual-dom.ev_hook.prototype" id="apidoc.module.virtual-dom.ev_hook.prototype">module virtual-dom.ev_hook.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.ev_hook.prototype.hook" id="apidoc.element.virtual-dom.ev_hook.prototype.hook">
+        function <span class="apidocSignatureSpan">virtual-dom.ev_hook.prototype.</span>hook
+        <span class="apidocSignatureSpan">(node, propertyName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hook = function (node, propertyName) {
+    var es = EvStore(node);
+    var propName = propertyName.substr(3);
+
+    es[propName] = this.value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var propValue = props[propName]
+
+if (propValue === undefined) {
+    removeProperty(node, propName, propValue, previous);
+} else if (isHook(propValue)) {
+    removeProperty(node, propName, propValue, previous)
+    if (propValue.hook) {
+        propValue.<span class="apidocCodeKeywordSpan">hook</span>(node,
+            propName,
+            previous ? previous[propName] : undefined)
+    }
+} else {
+    if (isObject(propValue)) {
+        patchObject(node, props, previous, propName, propValue);
+    } else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.virtual-dom.ev_hook.prototype.unhook" id="apidoc.element.virtual-dom.ev_hook.prototype.unhook">
+        function <span class="apidocSignatureSpan">virtual-dom.ev_hook.prototype.</span>unhook
+        <span class="apidocSignatureSpan">(node, propertyName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unhook = function (node, propertyName) {
+    var es = EvStore(node);
+    var propName = propertyName.substr(3);
+
+    es[propName] = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            }
+        } else if (typeof previousValue === "string") {
+            node[propName] = ""
+        } else {
+            node[propName] = null
+        }
+    } else if (previousValue.unhook) {
+        previousValue.<span class="apidocCodeKeywordSpan">unhook</span>(node, propName, propValue)
+    }
+}
+}
+
+function patchObject(node, props, previous, propName, propValue) {
+var previousValue = previous ? previous[propName] : undefined
 ...</pre></li>
     </ul>
 
@@ -1773,43 +832,19 @@ var parentNode = domNode.parentNode
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.patch_op" id="apidoc.module.virtual-dom.patch_op">module virtual-dom.patch_op</a></h1>
+<h1><a href="#apidoc.module.virtual-dom.focus_hook" id="apidoc.module.virtual-dom.focus_hook">module virtual-dom.focus_hook</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.patch_op.patch_op" id="apidoc.element.virtual-dom.patch_op.patch_op">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>patch_op
-        <span class="apidocSignatureSpan">(vpatch, domNode, renderOptions)</span>
+        <a href="#apidoc.element.virtual-dom.focus_hook.focus_hook" id="apidoc.element.virtual-dom.focus_hook.focus_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>focus_hook
+        <span class="apidocSignatureSpan">()</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function applyPatch(vpatch, domNode, renderOptions) {
-    var type = vpatch.type
-    var vNode = vpatch.vNode
-    var patch = vpatch.patch
-
-    switch (type) {
-        case VPatch.REMOVE:
-            return removeNode(domNode, vNode)
-        case VPatch.INSERT:
-            return insertNode(domNode, patch, renderOptions)
-        case VPatch.VTEXT:
-            return stringPatch(domNode, vNode, patch, renderOptions)
-        case VPatch.WIDGET:
-            return widgetPatch(domNode, vNode, patch, renderOptions)
-        case VPatch.VNODE:
-            return vNodePatch(domNode, vNode, patch, renderOptions)
-        case VPatch.ORDER:
-            reorderChildren(domNode, patch)
-            return domNode
-        case VPatch.PROPS:
-            applyProperties(domNode, patch, vNode.properties)
-            return domNode
-        case VPatch.THUNK:
-            return replaceRoot(domNode,
-                renderOptions.patch(domNode, patch, renderOptions))
-        default:
-            return domNode
+    <li>description and source-code<pre class="apidocCodePre">function MutableFocusHook() {
+    if (!(this instanceof MutableFocusHook)) {
+        return new MutableFocusHook();
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1819,109 +854,62 @@ var parentNode = domNode.parentNode
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.svg" id="apidoc.module.virtual-dom.svg">module virtual-dom.svg</a></h1>
+<h1><a href="#apidoc.module.virtual-dom.focus_hook.prototype" id="apidoc.module.virtual-dom.focus_hook.prototype">module virtual-dom.focus_hook.prototype</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.svg.svg" id="apidoc.element.virtual-dom.svg.svg">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>svg
-        <span class="apidocSignatureSpan">(tagName, properties, children)</span>
+        <a href="#apidoc.element.virtual-dom.focus_hook.prototype.hook" id="apidoc.element.virtual-dom.focus_hook.prototype.hook">
+        function <span class="apidocSignatureSpan">virtual-dom.focus_hook.prototype.</span>hook
+        <span class="apidocSignatureSpan">(node)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function svg(tagName, properties, children) {
-    if (!children &amp;&amp; isChildren(properties)) {
-        children = properties;
-        properties = {};
-    }
-
-    properties = properties || {};
-
-    // set namespace for svg
-    properties.namespace = SVG_NAMESPACE;
-
-    var attributes = properties.attributes || (properties.attributes = {});
-
-    for (var key in properties) {
-        if (!properties.hasOwnProperty(key)) {
-            continue;
+    <li>description and source-code<pre class="apidocCodePre">hook = function (node) {
+    nextTick(function () {
+        if (document.activeElement !== node) {
+            node.focus();
         }
-
-        var namespace = SVGAttributeNamespace(key);
-
-        if (namespace === undefined) { // not a svg attribute
-            continue;
-        }
-
-        var value = properties[key];
-
-        if (typeof value !== 'string' &amp;&amp;
-            typeof value !== 'number' &amp;&amp;
-            typeof value !== 'boolean'
-        ) {
-            continue;
-        }
-
-        if (namespace !== null) { // namespaced attribute
-            properties[key] = attributeHook(namespace, value);
-            continue;
-        }
-
-        attributes[key] = value
-        properties[key] = undefined
-    }
-
-    return h(tagName, properties, children);
+    });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var propValue = props[propName]
+
+if (propValue === undefined) {
+    removeProperty(node, propName, propValue, previous);
+} else if (isHook(propValue)) {
+    removeProperty(node, propName, propValue, previous)
+    if (propValue.hook) {
+        propValue.<span class="apidocCodeKeywordSpan">hook</span>(node,
+            propName,
+            previous ? previous[propName] : undefined)
+    }
+} else {
+    if (isObject(propValue)) {
+        patchObject(node, props, previous, propName, propValue);
+    } else {
+...</pre></li>
     </ul>
 
 
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.svg_attribute_namespace" id="apidoc.module.virtual-dom.svg_attribute_namespace">module virtual-dom.svg_attribute_namespace</a></h1>
+<h1><a href="#apidoc.module.virtual-dom.soft_set_hook" id="apidoc.module.virtual-dom.soft_set_hook">module virtual-dom.soft_set_hook</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.svg_attribute_namespace.svg_attribute_namespace" id="apidoc.element.virtual-dom.svg_attribute_namespace.svg_attribute_namespace">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>svg_attribute_namespace
+        <a href="#apidoc.element.virtual-dom.soft_set_hook.soft_set_hook" id="apidoc.element.virtual-dom.soft_set_hook.soft_set_hook">
+        function <span class="apidocSignatureSpan">virtual-dom.</span>soft_set_hook
         <span class="apidocSignatureSpan">(value)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function SVGAttributeNamespace(value) {
-  if (SVG_PROPERTIES.hasOwnProperty(value)) {
-    return SVG_PROPERTIES[value];
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.update_widget" id="apidoc.module.virtual-dom.update_widget">module virtual-dom.update_widget</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.virtual-dom.update_widget.update_widget" id="apidoc.element.virtual-dom.update_widget.update_widget">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>update_widget
-        <span class="apidocSignatureSpan">(a, b)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function updateWidget(a, b) {
-    if (isWidget(a) &amp;&amp; isWidget(b)) {
-        if ("name" in a &amp;&amp; "name" in b) {
-            return a.id === b.id
-        } else {
-            return a.init === b.init
-        }
+    <li>description and source-code<pre class="apidocCodePre">function SoftSetHook(value) {
+    if (!(this instanceof SoftSetHook)) {
+        return new SoftSetHook(value);
     }
 
-    return false
+    this.value = value;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1930,41 +918,39 @@ var parentNode = domNode.parentNode
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.virtual-dom.vpatch" id="apidoc.module.virtual-dom.vpatch">module virtual-dom.vpatch</a></h1>
+<h1><a href="#apidoc.module.virtual-dom.soft_set_hook.prototype" id="apidoc.module.virtual-dom.soft_set_hook.prototype">module virtual-dom.soft_set_hook.prototype</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.virtual-dom.vpatch.vpatch" id="apidoc.element.virtual-dom.vpatch.vpatch">
-        function <span class="apidocSignatureSpan">virtual-dom.</span>vpatch
-        <span class="apidocSignatureSpan">(type, vNode, patch)</span>
+        <a href="#apidoc.element.virtual-dom.soft_set_hook.prototype.hook" id="apidoc.element.virtual-dom.soft_set_hook.prototype.hook">
+        function <span class="apidocSignatureSpan">virtual-dom.soft_set_hook.prototype.</span>hook
+        <span class="apidocSignatureSpan">(node, propertyName)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function VirtualPatch(type, vNode, patch) {
-    this.type = Number(type)
-    this.vNode = vNode
-    this.patch = patch
+    <li>description and source-code<pre class="apidocCodePre">hook = function (node, propertyName) {
+    if (node[propertyName] !== this.value) {
+        node[propertyName] = this.value;
+    }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var propValue = props[propName]
+
+if (propValue === undefined) {
+    removeProperty(node, propName, propValue, previous);
+} else if (isHook(propValue)) {
+    removeProperty(node, propName, propValue, previous)
+    if (propValue.hook) {
+        propValue.<span class="apidocCodeKeywordSpan">hook</span>(node,
+            propName,
+            previous ? previous[propName] : undefined)
+    }
+} else {
+    if (isObject(propValue)) {
+        patchObject(node, props, previous, propName, propValue);
+    } else {
+...</pre></li>
     </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </div>
